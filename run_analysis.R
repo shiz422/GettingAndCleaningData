@@ -49,5 +49,5 @@ names(df1)<-newname
 
 # 5 From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 df2<-df1 %>% group_by(activity) %>% summarise_all(mean)
-names(df2)[-(1:2)]<-paste(names(df2)[-(1:2)],'mean',sep='_')
+names(df2)[-1]<-paste(names(df2)[-1],'mean',sep='_')
 write.table(df2,'./UCI HAR Dataset/MeanByGroups.txt',row.name=FALSE,quote=FALSE)
